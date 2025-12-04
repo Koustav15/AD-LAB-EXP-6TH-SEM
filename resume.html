@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koustav Ghosh - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.7;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+            font-size: 0.9em;
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .summary {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateX(5px);
+        }
+
+        .skill-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skill-list {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+
+        .soft-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .soft-skill-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+            text-align: center;
+            font-weight: 500;
+            color: #333;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .soft-skill-item:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .education-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .item-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .item-subtitle {
+            color: #667eea;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        .item-date {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .item-description {
+            color: #555;
+            margin-top: 8px;
+            line-height: 1.7;
+        }
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .language-item {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            text-align: center;
+        }
+
+        .language-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .language-level {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .fresher-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .item-header {
+                flex-direction: column;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .soft-skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .languages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fresher-badge {
+                display: block;
+                margin: 10px 0 0 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .soft-skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="myimage.jpg" alt="Koustav Ghosh" class="profile-photo">
+            <div class="header-content">
+                <h1>Koustav Ghosh <span class="fresher-badge">Fresher</span></h1>
+                <p class="tagline">B.Tech ECE Student | Aspiring Software Developer</p>
+                <div class="contact-info">
+                    <span>📧 <a href="mailto:koustavg15@gmail.com">koustavg15@gmail.com</a></span>
+                    <span>📱 +91 7980799535</span>
+                    <span>📍 Kolkata, West Bengal</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/koustav-ghosh-21255a288" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section id="profile">
+                <h2>Profile</h2>
+                <div class="summary">
+                    Hard working second year (2027 batch pass) B.Tech (Electronics & Computer Science Engineering) student from Kalinga Institute of Industrial Technology, Bhubaneshwar, Odisha, department of Electronics and Computer Science Engineering seeking employment which would enable me to readily utilize my skills and passion to further the mission of a company.
+                </div>
+            </section>
+
+            <section id="technical-skills">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="skill-title">Programming Languages</div>
+                        <div class="skill-list">
+                            • Java<br>
+                            • C<br>
+                            • Python
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-title">Database & Algorithms</div>
+                        <div class="skill-list">
+                            • DBMS (Certified Course)<br>
+                            • SQL<br>
+                            • DSA (Certified Course)
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-title">Tools & Technologies</div>
+                        <div class="skill-list">
+                            • Docker (Certified Course)<br>
+                            • AutoCAD<br>
+                            • Git & Version Control
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="soft-skills">
+                <h2>Professional Skills</h2>
+                <div class="soft-skills-grid">
+                    <div class="soft-skill-item">Project Management</div>
+                    <div class="soft-skill-item">Teamwork</div>
+                    <div class="soft-skill-item">Time Management</div>
+                    <div class="soft-skill-item">Leadership</div>
+                    <div class="soft-skill-item">Observation</div>
+                    <div class="soft-skill-item">Critical Thinking</div>
+                </div>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Bachelor of Technology (B.Tech)</div>
+                            <div class="item-subtitle">Electronics and Computer Science Engineering</div>
+                            <div class="item-subtitle">Kalinga Institute of Industrial Technology (KIIT)</div>
+                            <div class="item-description">Bhubaneshwar, Odisha</div>
+                        </div>
+                        <div class="item-date">2023 - 2027</div>
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Class 12 (Senior Secondary)</div>
+                            <div class="item-subtitle">KPS (Affiliated to CBSE)</div>
+                        </div>
+                        <div class="item-date">Completed in 2023</div>
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Class 10 (Secondary)</div>
+                            <div class="item-subtitle">St. Judes High School (Affiliated to ICSE)</div>
+                        </div>
+                        <div class="item-date">Completed in 2021</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="languages">
+                <h2>Languages</h2>
+                <div class="languages-grid">
+                    <div class="language-item">
+                        <div class="language-name">English</div>
+                        <div class="language-level">Fluent</div>
+                    </div>
+
+                    <div class="language-item">
+                        <div class="language-name">Hindi</div>
+                        <div class="language-level">Fluent</div>
+                    </div>
+
+                    <div class="language-item">
+                        <div class="language-name">Bengali</div>
+                        <div class="language-level">Basics</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="certifications">
+                <h2>Certifications</h2>
+                <div class="education-item">
+                    <div class="item-title">Database Management Systems (DBMS)</div>
+                    <div class="item-description">Certified Course</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-title">Data Structures & Algorithms (DSA)</div>
+                    <div class="item-description">Certified Course</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-title">Docker</div>
+                    <div class="item-description">Certified Course</div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
